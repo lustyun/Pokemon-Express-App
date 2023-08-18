@@ -1,16 +1,16 @@
 import React from "react";
 
 const myStyle = {
-    color: "#ffffff",
-    backgroundColor: "#000000",
+    fontFamily: "sans-serif",
 };
+
 function capitalizeFirstLetter(str) {
     return str[0].toUpperCase() + str.slice(1);
 }
 
 function Index({ pokemons }) {
     return (
-        <div>
+        <div style={myStyle}>
             <h1>Pokemons Index Page</h1>
             <ul>
                 {pokemons.map((pokemon, i) => {
