@@ -11,8 +11,10 @@ app.get("/", function (req, res) {
     res.render("Index", { pokemons: pokemons });
 });
 
-app.get("/pokemon/:index", function (req, res) {
-    res.send(req.params.index);
+app.get("/pokemons/:index", function (req, res) {
+    res.render("Show", {
+        pokemon: pokemons[req.params.index],
+    });
 });
 
 app.listen(port, () => {
