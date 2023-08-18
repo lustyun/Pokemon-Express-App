@@ -11,6 +11,10 @@ app.get("/", function (req, res) {
     res.render("Index", { pokemons: pokemons });
 });
 
+app.get("/pokemon/:index", function (req, res) {
+    res.send(req.params.index);
+});
+
 app.listen(port, () => {
     console.log("listening on http://localhost:3000/ port:", port);
 });
