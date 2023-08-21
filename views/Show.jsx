@@ -1,9 +1,30 @@
 import React from "react";
 
+const imgStyle = {
+    maxWidth: "300px",
+    margin: "10px 0",
+};
+
+const containerStyle = {
+    textAlign: "center",
+    backgroundColor: "#f4f4f4",
+    padding: "20px",
+};
+
+const titleStyle = {
+    fontSize: "24px",
+    marginBottom: "10px",
+};
+
+const backButtonStyle = {
+    color: "#007bff",
+    textDecoration: "none",
+};
+
 function Show({ pokemon }) {
     return (
-        <div>
-            <h1>Gotta Catch 'Em All</h1>
+        <div style={containerStyle}>
+            <h1 style={titleStyle}>Gotta Catch 'Em All</h1>
             <h2>{pokemon.name}</h2>
             <img
                 src={
@@ -12,9 +33,10 @@ function Show({ pokemon }) {
                         : pokemon.img + ".jpg"
                 }
                 alt={pokemon.name}
+                style={imgStyle}
             />
             <br />
-            <a href="/">Back</a>
+            <a href="/" style={backButtonStyle}>Back</a>
         </div>
     );
 }

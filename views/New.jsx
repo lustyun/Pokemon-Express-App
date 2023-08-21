@@ -1,17 +1,64 @@
 import React from "react";
 
+const containerStyle = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#f4f4f4",
+    padding: "20px",
+    width: "400px",
+    height: "100vh", // Set the container height to fill the viewport
+    margin: "0 auto", // Center horizontally using auto margin
+};
+
+const titleStyle = {
+    fontSize: "24px",
+    marginBottom: "10px",
+};
+
+const formStyle = {
+    marginTop: "20px",
+};
+
+const inputStyle = {
+    marginBottom: "10px",
+    padding: "5px",
+    width: "100%",
+    borderRadius: "4px",
+    border: "1px solid #ccc",
+};
+
+const submitButtonStyle = {
+    padding: "10px 20px",
+    backgroundColor: "#007bff",
+    color: "#fff",
+    borderRadius: "4px",
+    border: "none",
+    cursor: "pointer",
+};
+
 function New() {
     return (
-        <div>
-            <h1>New Pokemon page</h1>
-            {/* NOTE: action will be the route, method will be the HTTP verb */}
-            <form action="/pokemon" method="POST">
-                Name: <input type="text" name="name" />
+        <div style={containerStyle}>
+            <h1 style={titleStyle}>New Pokemon page</h1>
+            <form action="/pokemon" method="POST" style={formStyle}>
+                <label>
+                    Name:
+                    <input type="text" name="name" style={inputStyle} />
+                </label>
                 <br />
-                Image: <input type="text" name="img" />
+                <label>
+                    Image:
+                    <input type="text" name="img" style={inputStyle} />
+                </label>
                 <br />
                 <br />
-                <input type="submit" name="" value="Create Pokemon" />
+                <input
+                    type="submit"
+                    value="Create Pokemon"
+                    style={submitButtonStyle}
+                />
             </form>
         </div>
     );
