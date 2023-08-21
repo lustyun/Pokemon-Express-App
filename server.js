@@ -6,12 +6,24 @@ const pokemons = require("./models/Pokemon");
 app.set("views", __dirname + "/views");
 app.set("view engine", "jsx");
 app.engine("jsx", require("express-react-views").createEngine());
+app.use(express.urlencoded({ extended: false }));
 
-app.get("/", function (req, res) {
+// Handle form submission with image upload
+app.post("/pokemon", (req, res) => {
+    pokemons.push(req.body);
+    console.log(pokemons);
+    res.redirect("/pokemon");
+});
+
+app.get("/pokemon", function (req, res) {
     res.render("Index", { pokemons: pokemons });
 });
 
-app.get("/pokemons/:index", function (req, res) {
+app.get("/pokemon/new", function (req, res) {
+    res.render("New");
+});
+
+app.get("/pokemon/:index", function (req, res) {
     res.render("Show", {
         pokemon: pokemons[req.params.index],
     });
