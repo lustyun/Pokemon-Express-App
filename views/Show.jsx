@@ -6,6 +6,7 @@ const imgStyle = {
 };
 
 const containerStyle = {
+    fontFamily: "sans-serif",
     textAlign: "center",
     backgroundColor: "#f4f4f4",
     padding: "20px",
@@ -36,7 +37,7 @@ function Show({ pokemon }) {
                 style={imgStyle}
             />
             <br />
-            <a href="/" style={backButtonStyle}>Back</a>
+            <a href="/pokemon" style={backButtonStyle}>Back</a>
         </div>
     );
 }

@@ -1,6 +1,7 @@
 import React from "react";
 
 const containerStyle = {
+    fontFamily: "sans-serif",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -46,11 +47,6 @@ function New() {
                 <label>
                     Name:
                     <input type="text" name="name" style={inputStyle} />
-                </label>
-                <br />
-                <label>
-                    Image:
-                    <input type="text" name="img" style={inputStyle} />
                 </label>
                 <br />
                 <br />
